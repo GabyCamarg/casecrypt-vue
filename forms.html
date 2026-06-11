@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseCrypt</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🔎 CaseCrypt</div>
+
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="suspeito.html">Suspeitos</a>
+            <a href="evidencia.html">Evidências</a>
+            <a href="forms.html">Contato</a>
+        </nav>
+    </header>
+
+    <section class="casos-section">
+        <h2 class="titulo-secao">Contato & Feedback</h2>
+        <p class="subtitulo">
+        Encontrou algum problema ou tem sugestões? Envie sua mensagem para melhorar o jogo.
+        </p>
+
+        <div class="form-container">
+
+            <form class="formulario">
+
+            <div class="input-grupo">
+                <label>Nome</label>
+                <input type="text" placeholder="Seu nome" required>
+            </div>
+
+            <div class="input-grupo">
+                <label>Email</label>
+                <input type="email" placeholder="Seu email" required>
+            </div>
+
+            <div class="input-grupo">
+                <label>Tipo de mensagem</label>
+                <select required>
+                    <option value="">Selecione</option>
+                    <option>Sugestão</option>
+                    <option>Crítica</option>
+                    <option>Bug encontrado</option>
+                    <option>Elogio</option>
+                </select>
+            </div>
+
+            <div class="input-grupo">
+                <label>Mensagem</label>
+                <textarea placeholder="Escreva sua mensagem..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Enviar Feedback</button>
+
+        </form>
+
+    </div>
+
+    </section>
+
+    <footer class="footer-bottom">
+        <p>© 2026 CaseCrypt | Projeto acadêmico</p>
+    </footer>
+</body>
+</html>
