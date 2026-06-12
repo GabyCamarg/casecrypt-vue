@@ -31,13 +31,9 @@
 
         <div class="suspeito-info">
           <h3>{{ suspeito.nome }}</h3>
-
           <p>{{ suspeito.descricao }}</p>
 
-          <button
-            class="btn"
-            @click="investigar(suspeito.nome)"
-          >
+          <button class="btn" @click="investigar(suspeito.nome)">
             Investigar
           </button>
         </div>
@@ -59,49 +55,19 @@ import Footer from '../components/Footer.vue'
 const busca = ref('')
 
 const suspeitos = ref([
-  {
-    id: 1,
-    nome: 'João Silva',
-    descricao: 'Histórico suspeito e ligação com o local do crime.',
-    imagem: '/Suspeito1.png'
-  },
-  {
-    id: 2,
-    nome: 'Maria Souza',
-    descricao: 'Vista nas proximidades no horário do ocorrido.',
-    imagem: '/suspeita3.png'
-  },
-  {
-    id: 3,
-    nome: 'Carlos Mendes',
-    descricao: 'Possui histórico de conflitos com a vítima.',
-    imagem: '/suspeito2.png'
-  },
-  {
-    id: 4,
-    nome: 'Ana Ribeiro',
-    descricao: 'Relacionamento desconhecido com o caso.',
-    imagem: '/suspeita5.png'
-  },
-  {
-    id: 5,
-    nome: 'Lucas Alves',
-    descricao: 'Movimentação suspeita registrada.',
-    imagem: '/suspeito4.png'
-  },
-  {
-    id: 6,
-    nome: 'Fernanda Lima',
-    descricao: 'Possível ligação indireta com o crime.',
-    imagem: '/suspeita6.png'
-  }
+  { id: 1, nome: 'João Silva', descricao: 'Histórico suspeito...', imagem: '/Suspeito1.png' },
+  { id: 2, nome: 'Maria Souza', descricao: 'Vista no local...', imagem: '/suspeita3.png' },
+  { id: 3, nome: 'Carlos Mendes', descricao: 'Conflitos com vítima...', imagem: '/suspeito2.png' },
+  { id: 4, nome: 'Ana Ribeiro', descricao: 'Relacionamento desconhecido...', imagem: '/suspeita5.png' },
+  { id: 5, nome: 'Lucas Alves', descricao: 'Movimentação suspeita...', imagem: '/suspeito4.png' },
+  { id: 6, nome: 'Fernanda Lima', descricao: 'Ligação indireta...', imagem: '/suspeita6.png' }
 ])
 
-const suspeitosFiltrados = computed(() => {
-  return suspeitos.value.filter((s) =>
+const suspeitosFiltrados = computed(() =>
+  suspeitos.value.filter(s =>
     s.nome.toLowerCase().includes(busca.value.toLowerCase())
   )
-})
+)
 
 function investigar(nome) {
   alert(`Investigando ${nome}`)
