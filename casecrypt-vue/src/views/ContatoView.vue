@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <h1> Contato </h1>
+
+        <form @submit.prevent="enviar">
+            <div>
+                <label> Nome: </label>
+                <input type="text" v-model="nome"/>
+            </div>
+            <div>
+                <label> Email: </label>
+                <input type="email" v-model="email"/>
+            </div>
+
+            <button type="submit"> Enviar </button>
+        </form>
+
+        <p v-if = "erro" style="color:red">
+            Mensagem enviada com sucesso!
+        </p>
+    </div>
+</template>
