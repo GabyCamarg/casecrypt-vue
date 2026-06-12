@@ -30,3 +30,30 @@ import EvidenciaCard from '@/componentes/EvidenciaCard.vue';
     </div>
 </template>
 
+<script setup>
+import { ref, computed } from 'vue';
+import EvidenciaCard from '.. /componentes/EvidenciaCard.vue';
+import Modal from '../componentes/Modal.vue';
+
+const filtro = ref('');
+const modalAberto = ref(false);
+const evidenciaSelecionada = ref({ } )
+
+const evidencias = ref([
+    { titulo: 'Cena do Crime', descricao: 'Local encontrado com pistas importantes.' },
+    { titulo: 'Arma do Crime', descricao: 'Objeto encontrado no local do crime.' },
+    { titulo: 'Fotos do Crime', descricao: 'Registros fotográficos do local do crime.' },
+]);
+
+const evidenciasFiltradas = computed(() => {
+    return evidencias.value.filter(evidencia =>
+        evidencia.titulo.toLowerCase().includes(filtro.value.toLowerCase())
+    );
+});
+
+function abrirModal(item) {
+    evidenciaSelecionada.value = item;
+    modalAberto.value = true;
+
+}
+</script>
