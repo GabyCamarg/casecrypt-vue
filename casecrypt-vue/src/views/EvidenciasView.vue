@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import Modal from '../componentes/Modal.vue'
+import EvidenciaCard from '@/componentes/EvidenciaCard.vue'
+import Modal from '@/componentes/Modal.vue'
 
 const filtro = ref('');
 const modalAberto = ref(false);
