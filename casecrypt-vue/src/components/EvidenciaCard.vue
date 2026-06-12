@@ -23,33 +23,26 @@ defineEmits(['ver-detalhes'])
 <style scoped>
 .card {
   background: white;
+  padding: 20px;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 3px 10px rgba(0,0,0,.15);
 }
 
 .imagem {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 h3 {
-  padding: 15px 15px 5px;
-}
-
-p {
-  padding: 0 15px;
+  margin-bottom: 10px;
 }
 
 button {
-  margin: 15px;
-  padding: 10px 15px;
+  margin-top: 10px;
+  padding: 10px;
   border: none;
   border-radius: 8px;
   background: #8b0000;

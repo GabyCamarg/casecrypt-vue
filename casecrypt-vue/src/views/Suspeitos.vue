@@ -1,47 +1,32 @@
 <template>
   <Navbar />
 
-  <section class="banner">
-    <img src="/imagem-principal.png" class="bg" />
-
-    <div class="overlay">
-      <div class="content">
-        <h1>SUSPEITOS</h1>
-        <p>Explore os suspeitos do caso.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="casos-section">
+  <section class="container">
+    <h1>Suspeitos</h1>
 
     <input
-      class="campo-busca"
       v-model="busca"
       placeholder="Buscar suspeito..."
     />
 
     <div class="suspeitos-grid">
-
       <div
         class="suspeito-card"
-        v-for="suspeito in suspeitosFiltrados"
+        v-for="suspeito in filtrados"
         :key="suspeito.id"
       >
-        <img :src="suspeito.imagem" />
+        <img :src="suspeito.imagem">
 
         <div class="suspeito-info">
           <h3>{{ suspeito.nome }}</h3>
           <p>{{ suspeito.descricao }}</p>
 
-          <button class="btn" @click="investigar(suspeito.nome)">
+          <button @click="investigar(suspeito.nome)">
             Investigar
           </button>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <Footer />
@@ -55,21 +40,82 @@ import Footer from '../components/Footer.vue'
 const busca = ref('')
 
 const suspeitos = ref([
-  { id: 1, nome: 'João Silva', descricao: 'Histórico suspeito...', imagem: '/Suspeito1.png' },
-  { id: 2, nome: 'Maria Souza', descricao: 'Vista no local...', imagem: '/suspeita3.png' },
-  { id: 3, nome: 'Carlos Mendes', descricao: 'Conflitos com vítima...', imagem: '/suspeito2.png' },
-  { id: 4, nome: 'Ana Ribeiro', descricao: 'Relacionamento desconhecido...', imagem: '/suspeita5.png' },
-  { id: 5, nome: 'Lucas Alves', descricao: 'Movimentação suspeita...', imagem: '/suspeito4.png' },
-  { id: 6, nome: 'Fernanda Lima', descricao: 'Ligação indireta...', imagem: '/suspeita6.png' }
+  {
+    id: 1,
+    nome: 'João Silva',
+    descricao: 'Histórico suspeito e ligação com o local.',
+    imagem: '/Suspeito1.png'
+  },
+  {
+    id: 2,
+    nome: 'Maria Souza',
+    descricao: 'Vista no horário do crime.',
+    imagem: '/suspeita3.png'
+  },
+  {
+    id: 3,
+    nome: 'Carlos Mendes',
+    descricao: 'Conflitos com a vítima.',
+    imagem: '/suspeito2.png'
+  }
 ])
 
-const suspeitosFiltrados = computed(() =>
+const filtrados = computed(() =>
   suspeitos.value.filter(s =>
     s.nome.toLowerCase().includes(busca.value.toLowerCase())
   )
 )
 
 function investigar(nome) {
-  alert(`Investigando ${nome}`)
+  alert(`Investigando: ${nome}`)
 }
 </script>
+
+<style scoped>
+.container {
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  width: 300px;
+  padding: 12px;
+  display: block;
+  margin: 20px auto;
+}
+
+.suspeitos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.suspeito-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+.suspeito-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.suspeito-info {
+  padding: 15px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+</style>
