@@ -11,3 +11,6 @@
                 <label> Email: </label>
                 <input type="email" v-model="email"/>
             </div>
+
+            <button type="submit"> Enviar </button>
+        </form>
