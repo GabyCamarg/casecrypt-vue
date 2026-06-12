@@ -7,3 +7,7 @@
                 <label> Nome: </label>
                 <input type="text" v-model="nome"/>
             </div>
+            <div>
+                <label> Email: </label>
+                <input type="email" v-model="email"/>
+            </div>
