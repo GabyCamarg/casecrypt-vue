@@ -22,3 +22,11 @@ import EvidenciaCard from '@/componentes/EvidenciaCard.vue';
             @ver-detalhes="verDetalhes(item)"
         />
     </div>
+
+<Modal v-if="modalAberto" @fechar="modalAberto=false">
+    <h2>{{ evidenciaSelecionada.titulo }}</h2>
+    <p>{{ evidenciaSelecionada.descricao }}</p>
+    </Modal>
+    </div>
+</template>
+
