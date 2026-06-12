@@ -20,3 +20,22 @@
         </p>
     </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const nome = ref('');
+const email = ref('');
+const enviado = ref(false);
+const erro = ref(false);
+
+function enviar() {
+    if (!nome.value && email.value) {
+        erro.value = true;
+        enviado.value = false;
+        return
+    }
+    erro.value = false;
+    enviado.value = true;
+}
+</script>
