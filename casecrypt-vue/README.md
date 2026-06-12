@@ -1,42 +1,121 @@
-# casecrypt-vue
+# CaseCrypt - Portal de Investigação Criminal
 
-This template should help get you started developing with Vue 3 in Vite.
+## Descrição
 
-## Recommended IDE Setup
+O CaseCrypt é uma aplicação web desenvolvida com Vue.js que simula um portal de investigação criminal. O sistema permite visualizar casos, suspeitos, evidências e enviar mensagens por meio de um formulário de contato.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Este projeto foi desenvolvido como atividade acadêmica da disciplina de Desenvolvimento Web utilizando Vue.js.
 
-## Recommended Browser Setup
+---
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Tecnologias Utilizadas
 
-## Type Support for `.vue` Imports in TS
+* Vue.js 3
+* Vue Router
+* Vite
+* HTML5
+* CSS3
+* JavaScript
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Funcionalidades
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Página Inicial
 
-## Project Setup
+* Apresentação do sistema
+* Exibição de casos recentes
+* Navegação para suspeitos e evidências
 
-```sh
+### Suspeitos
+
+* Listagem de suspeitos
+* Busca dinâmica por nome
+* Botão de investigação
+
+### Evidências
+
+* Listagem de evidências
+* Filtro de pesquisa
+* Exibição de detalhes em modal
+* Visualização de imagens das evidências
+
+### Contato
+
+* Formulário de contato
+* Validação de campos
+* Mensagem de sucesso e erro
+
+---
+
+## Estrutura do Projeto
+
+```text
+src/
+├── components/
+│   ├── Navbar.vue
+│   ├── Footer.vue
+│   ├── EvidenciaCard.vue
+│   └── Modal.vue
+│
+├── views/
+│   ├── Home.vue
+│   ├── Suspeitos.vue
+│   ├── EvidenciasView.vue
+│   └── Contato.vue
+│
+├── router/
+│   └── index.ts
+│
+├── App.vue
+└── main.ts
+```
+
+---
+
+## Como Executar o Projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone LINK_DO_REPOSITORIO
+```
+
+### 2. Acessar a pasta do projeto
+
+```bash
+cd casecrypt-vue
+```
+
+### 3. Instalar as dependências
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 4. Executar o projeto
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### 5. Abrir no navegador
 
-```sh
-npm run build
+Acesse o endereço exibido no terminal, normalmente:
+
+```text
+http://localhost:5173
 ```
+
+---
+
+## Integrantes
+
+* Gabryele Camargo Oliveira
+* Yasminn da Silva Carvalho
+
+---
+
+## Objetivo Acadêmico
+
+Aplicar os conceitos estudados durante a disciplina por meio da construção de uma aplicação front-end utilizando Vue.js, componentes reutilizáveis, navegação entre páginas, interatividade e organização de projeto.
