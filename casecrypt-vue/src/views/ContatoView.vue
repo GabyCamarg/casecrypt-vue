@@ -14,3 +14,9 @@
 
             <button type="submit"> Enviar </button>
         </form>
+
+        <p v-if = "erro" style="color:red">
+            Mensagem enviada com sucesso!
+        </p>
+    </div>
+</template>
